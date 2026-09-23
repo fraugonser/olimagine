@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import FanArtPreview from "@/components/FanArtPreview";
 export default function Home() {
     const [selectedArt, setSelectedArt] = useState<{
     file: string;
@@ -156,7 +157,7 @@ export default function Home() {
     </div>
   </div>
 )}
-    
+    <FanArtPreview />
     </main>
   );
 }

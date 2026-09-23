@@ -25,3 +25,10 @@ export const fanArtworks = [
   { id: "zhikharka-home", image: "/fan-art/Zhikharka-at-Home.PNG" },
   { id: "zhikharka", image: "/fan-art/Zhikharka.PNG" },
 ];
+export const featuredFanArtIds = [
+  "monster",
+  "it-and-oli",
+  "sirenhead-family",
+  "purple-jocker",
+  "zhikharka",
+];
