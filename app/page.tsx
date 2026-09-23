@@ -1,4 +1,11 @@
+"use client";
+
+import { useState } from "react";
 export default function Home() {
+    const [selectedArt, setSelectedArt] = useState<{
+    file: string;
+    title: string;
+  } | null>(null);
   return (
     <main className="min-h-screen bg-[#160d24] text-white">
       <nav className="flex w-full items-center justify-between px-6 py-6 sm:px-10 lg:px-16">
@@ -11,7 +18,7 @@ export default function Home() {
       Gallery
     </a>
 
-    <a href="#fan-art" className="transition hover:text-white">
+    <a href="/fan-art" className="transition hover:text-white">
       Fan Art
     </a>
 
@@ -89,29 +96,67 @@ export default function Home() {
         ["Earth.jpg", "Earth"],
         ["Clown.jpg", "Clown"],
       ].map(([file, title]) => (
-        <div
-          key={file}
-          className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5"
-        >
-          <div className="flex aspect-square items-center justify-center overflow-hidden bg-black/20 p-2">
-  <img
-    src={`/art/${file}`}
-    alt={title}
-    className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.03]"
-  />
-</div>
+  <button
+    key={file}
+    onClick={() => setSelectedArt({ file, title })}
+    className="group overflow-hidden rounded-2xl border border-white/10 bg-white/5 text-left transition hover:-translate-y-1 hover:border-white/30"
+  >
+    <div className="flex aspect-square items-center justify-center overflow-hidden bg-black/20 p-2">
+      <img
+        src={`/art/${file}`}
+        alt={title}
+        className="h-full w-full object-contain transition duration-500 group-hover:scale-[1.03]"
+      />
+    </div>
 
-          <div className="p-4">
-            <p className="font-semibold">{title}</p>
-            <p className="mt-1 text-sm text-white/45">
-              Original artwork by Oliver
-            </p>
-          </div>
-        </div>
-      ))}
+    <div className="p-4">
+      <p className="font-semibold">{title}</p>
+      <p className="mt-1 text-sm text-white/45">
+        Original artwork by Oliver
+      </p>
+    </div>
+  </button>
+))}
     </div>
   </div>
 </section>
+{selectedArt && (
+  <div
+    className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-6"
+    onClick={() => setSelectedArt(null)}
+  >
+    <div
+      className="relative max-h-[90vh] w-full max-w-4xl overflow-hidden rounded-3xl border border-white/10 bg-[#160d24] p-6"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={() => setSelectedArt(null)}
+        className="absolute right-5 top-5 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/60 text-xl text-white transition hover:bg-white hover:text-black"
+      >
+        ×
+      </button>
+
+      <div className="flex max-h-[70vh] items-center justify-center">
+        <img
+          src={`/art/${selectedArt.file}`}
+          alt={selectedArt.title}
+          className="max-h-[70vh] max-w-full object-contain"
+        />
+      </div>
+
+      <div className="pt-6">
+        <h3 className="text-2xl font-bold">
+          {selectedArt.title}
+        </h3>
+
+        <p className="mt-1 text-white/50">
+          Original artwork by Oliver
+        </p>
+      </div>
+    </div>
+  </div>
+)}
+    
     </main>
   );
 }
