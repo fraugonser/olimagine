@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Hero from "@/components/Hero";
-import Header from "@/components/Header";
 import FanArtPreview from "@/components/FanArtPreview";
 export default function Home() {
     const [selectedArt, setSelectedArt] = useState<{
@@ -11,7 +10,7 @@ export default function Home() {
   } | null>(null);
   return (
     <main className="min-h-screen bg-[#160d24] text-white">
-      <Header />
+      
       <Hero />
      
       <section
@@ -105,7 +104,111 @@ export default function Home() {
     </div>
   </div>
 )}
-    <FanArtPreview />
-    </main>
+   <FanArtPreview />
+
+{/* ROADMAP */}
+<section
+  id="roadmap"
+  className="scroll-mt-28 px-6 py-24 sm:px-10 lg:px-16"
+>
+  <div className="mx-auto max-w-7xl">
+
+    <div className="mb-12">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-purple-300">
+        Roadmap
+      </p>
+
+      <h2 className="text-4xl font-bold sm:text-5xl">
+        From one little gallery
+        <br />
+        <span className="text-yellow-300">to something bigger.</span>
+      </h2>
+
+      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
+        Olimagine starts with Oliver&apos;s art. Each step builds toward
+        a larger universe where art can create lasting value for him
+        and, one day, help other children too.
+      </p>
+    </div>
+
+    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+      {/* 01 */}
+      <div className="rounded-[28px] border border-pink-400/30 bg-[#0d0918]/80 p-6">
+        <p className="text-sm font-bold text-pink-300">01</p>
+        <h3 className="mt-3 text-xl font-semibold">
+          Build the prototype
+        </h3>
+        <p className="mt-2 leading-relaxed text-white/70">
+          Launch a working Olimagine MVP with wallet connection and
+          digital collectibles on Solana Devnet.
+        </p>
+      </div>
+
+      {/* 02 */}
+      <div className="rounded-[28px] border border-orange-400/30 bg-[#0d0918]/80 p-6">
+        <p className="text-sm font-bold text-orange-300">02</p>
+        <h3 className="mt-3 text-xl font-semibold">
+          First collection
+        </h3>
+        <p className="mt-2 leading-relaxed text-white/70">
+          Bring selected original works by Oliver on-chain as
+          collectible digital art.
+        </p>
+      </div>
+
+      {/* 03 */}
+      <div className="rounded-[28px] border border-yellow-300/30 bg-[#0d0918]/80 p-6">
+        <p className="text-sm font-bold text-yellow-300">03</p>
+        <h3 className="mt-3 text-xl font-semibold">
+          Grow Oliver&apos;s assets
+        </h3>
+        <p className="mt-2 leading-relaxed text-white/70">
+          Grow the gallery and build verified assets for Oliver
+          through his original art.
+        </p>
+      </div>
+
+      {/* 04 */}
+      <div className="rounded-[28px] border border-green-400/30 bg-[#0d0918]/80 p-6">
+        <p className="text-sm font-bold text-green-300">04</p>
+        <h3 className="mt-3 text-xl font-semibold">
+          Reach the $50K milestone
+        </h3>
+        <p className="mt-2 leading-relaxed text-white/70">
+          Reach $50,000 in verified assets accumulated for Oliver
+          and unlock the next chapter.
+        </p>
+      </div>
+
+      {/* 05 */}
+      <div className="rounded-[28px] border border-cyan-400/30 bg-[#0d0918]/80 p-6">
+        <p className="text-sm font-bold text-cyan-300">05</p>
+        <h3 className="mt-3 text-xl font-semibold">
+          Prepare the Olimagine Fund
+        </h3>
+        <p className="mt-2 leading-relaxed text-white/70">
+          Begin the legal and organizational work required to create
+          the future Olimagine Fund.
+        </p>
+      </div>
+
+      {/* 06 */}
+      <div className="rounded-[28px] border border-purple-400/30 bg-[#0d0918]/80 p-6">
+        <p className="text-sm font-bold text-purple-300">06</p>
+        <h3 className="mt-3 text-xl font-semibold">
+          Open the universe
+        </h3>
+        <p className="mt-2 leading-relaxed text-white/70">
+          Introduce future charity collections and Contributed Art,
+          bringing more artists into Olimagine&apos;s mission.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+</main>
   );
 }

@@ -1,6 +1,10 @@
-import Image from "next/image";
+"use client";
 
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="border-b border-white/15 bg-[#0d0912] px-6">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between">
@@ -28,38 +32,78 @@ export default function Header() {
 />
         </a>
 
-        <nav className="hidden items-center gap-10 md:flex">
+       <nav className="hidden items-center gap-10 md:flex">
+
+  {/* Gallery */}
   <a
-  href="/gallery"
-  className="group relative py-2 transition-all duration-300 hover:scale-105 hover:text-pink-200"
->
+    href="/gallery"
+    className={`group relative py-2 transition-all duration-300 hover:scale-105 hover:text-pink-200 ${
+      pathname === "/gallery"
+        ? "text-pink-200"
+        : ""
+    }`}
+  >
     Gallery
-    <span className="absolute bottom-0 left-0 h-[3px] w-0 rounded-full bg-pink-400 transition-all duration-300 group-hover:w-full" />
+
+    <span
+      className={`absolute bottom-0 left-0 h-[3px] rounded-full bg-pink-400 transition-all duration-300 ${
+        pathname === "/gallery"
+          ? "w-full shadow-[0_0_10px_rgba(244,114,182,0.8)]"
+          : "w-0 group-hover:w-full"
+      }`}
+    />
   </a>
 
+  {/* Fan Art */}
   <a
-  href="/fan-art"
-  className="group relative py-2 transition-all duration-300 hover:scale-105 hover:text-yellow-200"
->
+    href="/fan-art"
+    className={`group relative py-2 transition-all duration-300 hover:scale-105 hover:text-yellow-200 ${
+      pathname === "/fan-art"
+        ? "text-yellow-200"
+        : ""
+    }`}
+  >
     Fan Art
-    <span className="absolute bottom-0 left-0 h-[3px] w-0 rounded-full bg-yellow-300 transition-all duration-300 group-hover:w-full" />
+
+    <span
+      className={`absolute bottom-0 left-0 h-[3px] rounded-full bg-yellow-300 transition-all duration-300 ${
+        pathname === "/fan-art"
+          ? "w-full shadow-[0_0_10px_rgba(253,224,71,0.8)]"
+          : "w-0 group-hover:w-full"
+      }`}
+    />
   </a>
 
+  {/* Contributed Art */}
   <a
-  href="/contributed-art"
-  className="group relative py-2 transition-all duration-300 hover:scale-105 hover:text-green-200"
->
+    href="/contributed-art"
+    className={`group relative py-2 transition-all duration-300 hover:scale-105 hover:text-green-200 ${
+      pathname === "/contributed-art"
+        ? "text-green-200"
+        : ""
+    }`}
+  >
     Contributed Art
-    <span className="absolute bottom-0 left-0 h-[3px] w-0 rounded-full bg-green-400 transition-all duration-300 group-hover:w-full" />
+
+    <span
+      className={`absolute bottom-0 left-0 h-[3px] rounded-full bg-green-400 transition-all duration-300 ${
+        pathname === "/contributed-art"
+          ? "w-full shadow-[0_0_10px_rgba(74,222,128,0.8)]"
+          : "w-0 group-hover:w-full"
+      }`}
+    />
   </a>
 
+  {/* Roadmap */}
   <a
-  href="#roadmap"
-  className="group relative py-2 transition-all duration-300 hover:scale-105 hover:text-purple-200"
->
+    href="/#roadmap"
+    className="group relative py-2 transition-all duration-300 hover:scale-105 hover:text-purple-200"
+  >
     Roadmap
+
     <span className="absolute bottom-0 left-0 h-[3px] w-0 rounded-full bg-purple-400 transition-all duration-300 group-hover:w-full" />
   </a>
+
 </nav>
         <div className="group relative">
 
