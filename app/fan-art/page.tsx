@@ -1,5 +1,5 @@
 "use client";
-
+import BuyMeAKakao from "@/components/solana/BuyMeAKakao";
 import Image from "next/image";
 import { useState } from "react";
 import { fanArtworks } from "@/data/fanArt";
@@ -41,6 +41,9 @@ export default function FanArtPage() {
           Characters, stories and strange creatures Oliver loves — seen and
           redrawn through his own imagination.
         </p>
+        <div className="mt-8">
+  <BuyMeAKakao />
+</div>
 
         <div className="mt-14 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
           {fanArtworks.map((artwork, index) => (

@@ -2,10 +2,26 @@
 
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useWallet } from "@solana/wallet-adapter-react";
+import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 export default function Header() {
   const pathname = usePathname();
 
+  const { publicKey, connected, disconnect } = useWallet();
+  const { setVisible } = useWalletModal();
+
+  const handleWalletClick = () => {
+    if (connected) {
+      disconnect();
+    } else {
+      setVisible(true);
+    }
+  };
+
   return (
+  
+
+
     <header className="border-b border-white/15 bg-[#0d0912] px-6">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between">
 
@@ -127,6 +143,7 @@ export default function Header() {
 {/* bottom right */}
 <span className="absolute -bottom-4 right-1/4 h-2 w-[2px] -rotate-[25deg] bg-yellow-300 transition-all duration-300 group-hover:translate-y-0.5" />
   <button
+  onClick={handleWalletClick}
     className="
       relative
       rounded-2xl
@@ -141,7 +158,9 @@ export default function Header() {
       group-hover:shadow-[0_0_28px_rgba(253,224,71,0.55)]
     "
   >
-    Connect Wallet
+    {connected && publicKey
+  ? `${publicKey.toBase58().slice(0, 4)}...${publicKey.toBase58().slice(-4)}`
+  : "Connect Wallet"}
   </button>
 
 </div>
