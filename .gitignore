@@ -39,3 +39,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Metaplex local working files
+/nft-assets/
+/cm-template/
+
+# Solana keypairs — NEVER commit
+*.json.keypair
+*keypair*.json
+throwqway.json
+
+# Local NFT deployment scripts
+/scripts/
