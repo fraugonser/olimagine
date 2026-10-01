@@ -46,6 +46,22 @@ const ARTWORKS: Record<
   candyMachine: "8D3yW1iYTteFdeG2jgTTMMU6yKRHyt94scGdtDbsqASY",
   collection: "EH1sjVBrgmzgsUxSinpF7wtpqocvUKDWMgjAqJaureej",
 },
+  "Birthday Owl": {
+    candyMachine: "DxVdc5RmTNDZGdypsk1NvhMZwY9LNqtNVqidZ7RsQnTF",
+    collection: "7TV8YLKD5bK3kMSkjbaHZQ7DFTx2uqL2qypxQAoxGy7s",
+  },
+    "Self Portrait": {
+    candyMachine: "3n7q9JJBzWC2o7A9yL1yrc8d6aJAb5eLwFv91rqUt8MT",
+    collection: "BF5VVkkN7vkN2fWx6Y6iAYADYZFxEUNHEVp5otpKEMvJ",
+  },
+    "Earth": {
+    candyMachine: "BHMu5Q9Rr3hV1htM8b882oZF2tPqKBqiAhfsuGDudWFc",
+    collection: "7phWBduNaVj8wCq9Ggi9yjuUWrfTrWJgQYUE1cMD5wMF",
+  },
+    "Clown": {
+    candyMachine: "J1HStQbfpML6QrrSQ8nNEGoRWMUugFpa5DnpwAL4wZY4",
+    collection: "85bcGoER4Mfh6m3XR2zoLhe7rrNXaSckKDtjvmtK1b7y",
+  },
 };
 
 export default function MintButton({ artworkName }: MintButtonProps) {
