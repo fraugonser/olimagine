@@ -2,15 +2,15 @@ import Image from "next/image";
 
 export default function GalleryPage() {
   return (
-    <main className="min-h-screen bg-[#160d24] text-white">
+    <main className="min-h-screen bg-[var(--background)] text-white">
 
       {/* GALLERY HERO */}
-      <section className="relative overflow-hidden border-b border-white/10">
+      <section className="relative overflow-hidden border-b border-[var(--border)]">
         <div className="mx-auto grid min-h-[560px] max-w-7xl items-center px-6 py-14 md:grid-cols-[1fr_0.9fr]">
 
           {/* LEFT — TEXT */}
           <div className="relative z-20 max-w-2xl">
-            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-purple-300">
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--purple)]">
               Original Art
             </p>
 
@@ -19,17 +19,17 @@ export default function GalleryPage() {
               <br />
 
               <span className="inline-flex pt-2">
-                <span className="-rotate-2 text-pink-400">G</span>
-                <span className="rotate-2 text-orange-400">a</span>
-                <span className="-rotate-1 text-yellow-300">l</span>
-                <span className="rotate-2 text-green-400">l</span>
-                <span className="-rotate-2 text-cyan-400">e</span>
-                <span className="rotate-1 text-blue-400">r</span>
-                <span className="-rotate-2 text-purple-400">y</span>
+                <span className="-rotate-2 text-[var(--pink)]">G</span>
+                <span className="rotate-2 text-[var(--orange)]">a</span>
+                <span className="-rotate-1 text-[var(--yellow)]">l</span>
+                <span className="rotate-2 text-[var(--green)]">l</span>
+                <span className="-rotate-2 text-[var(--cyan)]">e</span>
+                <span className="rotate-1 text-[var(--cyan)]">r</span>
+                <span className="-rotate-2 text-[var(--purple)]">y</span>
               </span>
             </h1>
 
-            <p className="mt-7 max-w-xl text-lg leading-relaxed text-white/70">
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-[var(--text-muted)]">
               A growing collection of Oliver&apos;s original artwork.
               Selected works will become digital collectibles on Solana,
               connecting his physical art with verifiable on-chain ownership.
@@ -102,12 +102,12 @@ export default function GalleryPage() {
       </section>
             {/* HOW IT WORKS */}
       <section className="mx-auto max-w-7xl px-6 py-10">
-        <div className="rounded-[32px] border border-purple-500/40 bg-[#0d0918]/80 px-8 py-8 shadow-[0_0_40px_rgba(124,58,237,0.08)]">
+        <div className="rounded-[32px] border border-[var(--purple)]/35 bg-[var(--surface)] px-8 py-8 shadow-[0_0_40px_rgba(124,58,237,0.08)]">
 
           <h2 className="mb-8 text-4xl font-bold">
-            <span className="text-pink-400">How</span>{" "}
-            <span className="text-yellow-300">it</span>{" "}
-            <span className="text-cyan-400">works</span>
+            <span className="text-[var(--pink)]">How</span>{" "}
+            <span className="text-[var(--yellow)]">it</span>{" "}
+            <span className="text-[var(--cyan)]">works</span>
           </h2>
 
           <div className="grid items-start gap-8 md:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr]">
@@ -128,13 +128,13 @@ export default function GalleryPage() {
                 Oliver creates
               </h3>
 
-              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-white/70">
+              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-[var(--text-muted)]">
                 Original physical art made by Oliver.
               </p>
             </div>
 
             {/* Arrow */}
-            <div className="hidden self-center text-4xl text-cyan-400 md:block">
+            <div className="hidden self-center text-4xl text-[var(--cyan)] md:block">
               →
             </div>
 
@@ -154,13 +154,13 @@ export default function GalleryPage() {
                 Art goes on-chain
               </h3>
 
-              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-white/70">
+              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-[var(--text-muted)]">
                 Selected works become digital collectibles on Solana.
               </p>
             </div>
 
             {/* Arrow */}
-            <div className="hidden self-center text-4xl text-cyan-400 md:block">
+            <div className="hidden self-center text-4xl text-[var(--cyan)] md:block">
               →
             </div>
 
@@ -180,13 +180,13 @@ export default function GalleryPage() {
                 Oliver&apos;s assets grow
               </h3>
 
-              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-white/70">
+              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-[var(--text-muted)]">
                 Sales help build his future.
               </p>
             </div>
 
             {/* Arrow */}
-            <div className="hidden self-center text-4xl text-cyan-400 md:block">
+            <div className="hidden self-center text-4xl text-[var(--cyan)] md:block">
               →
             </div>
 
@@ -206,7 +206,7 @@ export default function GalleryPage() {
                 Future Olimagine Fund
               </h3>
 
-              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-white/70">
+              <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-[var(--text-muted)]">
                 At a defined milestone, we prepare the next chapter.
               </p>
             </div>
@@ -219,8 +219,8 @@ export default function GalleryPage() {
   <div className="grid gap-6 md:grid-cols-2">
 
     {/* Future model */}
-    <div className="rounded-[32px] border border-pink-400/30 bg-[#0d0918]/80 p-8">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-pink-300">
+    <div className="rounded-[32px] border border-[var(--pink)]/30 bg-[var(--surface)] p-8">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[var(--pink)]">
         Long-term vision
       </p>
 
@@ -228,51 +228,51 @@ export default function GalleryPage() {
         The future model
       </h2>
 
-      <p className="mt-5 leading-relaxed text-white/80">
+      <p className="mt-5 leading-relaxed text-[var(--text-soft)]">
         Olimagine begins as Oliver&apos;s personal gallery. As the project grows,
         the long-term vision is for future charity collections to direct{" "}
-        <span className="font-semibold text-pink-300">
+        <span className="font-semibold text-[var(--pink)]">
           90% toward the Olimagine Fund
         </span>{" "}
         and{" "}
-        <span className="font-semibold text-yellow-300">
+        <span className="font-semibold text-[var(--yellow)]">
           10% to Oliver as the artist
         </span>
         {", once the required structure is established."}
       </p>
 
-      <p className="mt-4 leading-relaxed text-white/65">
+      <p className="mt-4 leading-relaxed text-[var(--text-muted)]">
         The Fund is a future stage of Olimagine and does not exist yet.
       </p>
     </div>
 
     {/* $50K milestone */}
-    <div className="rounded-[32px] border border-yellow-300/30 bg-[#0d0918]/80 p-8">
-      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-yellow-300">
+    <div className="rounded-[32px] border border-[var(--yellow)]/30 bg-[var(--surface)] p-8">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.25em] text-[var(--yellow)]">
         First milestone
       </p>
 
       <h2 className="text-3xl font-bold md:text-4xl">
-        <span className="text-yellow-300">$50,000</span>
+        <span className="text-[var(--yellow)]">$50,000</span>
         <br />
         for Oliver
       </h2>
 
-      <p className="mt-5 leading-relaxed text-white/80">
+      <p className="mt-5 leading-relaxed text-[var(--text-soft)]">
         Our first measurable milestone is $50,000 in verified assets
         accumulated for Oliver.
       </p>
 
-      <p className="mt-4 leading-relaxed text-white/80">
+      <p className="mt-4 leading-relaxed text-[var(--text-soft)]">
         Reaching this milestone unlocks the next chapter: preparing the
         future Olimagine Fund.
       </p>
 
       <div className="mt-7 h-3 overflow-hidden rounded-full bg-white/10">
-        <div className="h-full w-0 rounded-full bg-yellow-300" />
+        <div className="h-full w-0 rounded-full bg-[var(--yellow)]" />
       </div>
 
-      <p className="mt-2 text-sm text-white/60">
+      <p className="mt-2 text-sm text-[var(--text-muted)]">
         The journey starts here.
       </p>
     </div>
@@ -284,11 +284,11 @@ export default function GalleryPage() {
 
         <div className="mb-8">
           <h2 className="text-4xl font-bold md:text-5xl">
-            <span className="text-pink-400">Original</span>{" "}
-            <span className="text-purple-300">Works</span>
+            <span className="text-[var(--pink)]">Original</span>{" "}
+            <span className="text-[var(--purple)]">Works</span>
           </h2>
 
-          <p className="mt-3 text-lg text-white/70">
+          <p className="mt-3 text-lg text-[var(--text-muted)]">
             A growing collection of Oliver&apos;s original art.
           </p>
         </div>
@@ -296,7 +296,7 @@ export default function GalleryPage() {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
           {/* Red */}
-          <div className="overflow-hidden rounded-[28px] border border-red-400/30 bg-[#0d0918]">
+          <div className="overflow-hidden rounded-[28px] border border-red-400/30 bg-[var(--surface)]">
             <div className="aspect-square overflow-hidden">
               <Image
                 src="/brand/placeholders/Question-red.png"
@@ -309,14 +309,14 @@ export default function GalleryPage() {
 
             <div className="p-5">
               <p className="text-lg font-semibold">Coming soon</p>
-              <p className="mt-1 text-sm text-white/50">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Original art by Oliver
               </p>
             </div>
           </div>
 
           {/* Blue */}
-          <div className="overflow-hidden rounded-[28px] border border-blue-400/30 bg-[#0d0918]">
+          <div className="overflow-hidden rounded-[28px] border border-[var(--cyan)]/30 bg-[var(--surface)]">
             <div className="aspect-square overflow-hidden">
               <Image
                 src="/brand/placeholders/Question-blue.png"
@@ -329,14 +329,14 @@ export default function GalleryPage() {
 
             <div className="p-5">
               <p className="text-lg font-semibold">Coming soon</p>
-              <p className="mt-1 text-sm text-white/50">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Original art by Oliver
               </p>
             </div>
           </div>
 
           {/* Yellow */}
-          <div className="overflow-hidden rounded-[28px] border border-yellow-300/30 bg-[#0d0918]">
+          <div className="overflow-hidden rounded-[28px] border border-[var(--yellow)]/30 bg-[var(--surface)]">
             <div className="aspect-square overflow-hidden">
               <Image
                 src="/brand/placeholders/Question-yellow.png"
@@ -349,14 +349,14 @@ export default function GalleryPage() {
 
             <div className="p-5">
               <p className="text-lg font-semibold">Coming soon</p>
-              <p className="mt-1 text-sm text-white/50">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Original art by Oliver
               </p>
             </div>
           </div>
 
           {/* Pink */}
-          <div className="overflow-hidden rounded-[28px] border border-pink-400/30 bg-[#0d0918]">
+          <div className="overflow-hidden rounded-[28px] border border-[var(--pink)]/30 bg-[var(--surface)]">
             <div className="aspect-square overflow-hidden">
               <Image
                 src="/brand/placeholders/Question-pink.png"
@@ -369,7 +369,7 @@ export default function GalleryPage() {
 
             <div className="p-5">
               <p className="text-lg font-semibold">Coming soon</p>
-              <p className="mt-1 text-sm text-white/50">
+              <p className="mt-1 text-sm text-[var(--text-muted)]">
                 Original art by Oliver
               </p>
             </div>
@@ -379,15 +379,15 @@ export default function GalleryPage() {
       </section>
       {/* GALLERY CLOSING */}
 <section className="mx-auto max-w-7xl px-6 pb-24 pt-14">
-  <div className="relative overflow-hidden rounded-[36px] border border-purple-400/20 bg-[#0d0918]/70 px-8 py-16 text-center md:py-20">
+  <div className="relative overflow-hidden rounded-[36px] border border-[var(--purple)]/25 bg-[var(--surface)] px-8 py-16 text-center md:py-20">
 
     <p className="text-4xl font-bold leading-tight md:text-6xl">
-      <span className="text-pink-400">Every drawing</span>
+      <span className="text-[var(--pink)]">Every drawing</span>
       <br />
-      <span className="text-yellow-300">is a new world.</span>
+      <span className="text-[var(--yellow)]">is a new world.</span>
     </p>
 
-    <p className="mx-auto mt-6 max-w-xl text-lg text-white/70">
+    <p className="mx-auto mt-6 max-w-xl text-lg text-[var(--text-muted)]">
       And this collection is only beginning.
     </p>
 

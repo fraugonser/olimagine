@@ -33,18 +33,51 @@ export default function Home() {
       >
         <div className="mx-auto max-w-7xl">
           <div className="mb-12">
-            <p className="mb-3 text-sm uppercase tracking-[0.3em] text-white/50">
-              Featured Art
-            </p>
+            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--pink)]">
+  Featured Art
+</p>
 
-            <h2 className="text-4xl font-bold sm:text-5xl">
-              Inside Oliver&apos;s imagination
-            </h2>
+<h2 className="text-4xl font-bold sm:text-5xl">
+  Inside Oliver&apos;s{" "}
 
-            <p className="mt-4 max-w-2xl text-white/60">
-              A rotating selection of drawings from Oliver&apos;s ever-growing
-              creative universe.
+  <span className="inline-flex items-baseline font-black">
+    <span className="inline-block -rotate-6 text-[var(--pink)]">i</span>
+    <span className="inline-block translate-y-1 rotate-3 text-[var(--yellow)]">m</span>
+    <span className="inline-block -translate-y-1 -rotate-3 text-[var(--cyan)]">a</span>
+    <span className="inline-block translate-y-1 rotate-6 text-[var(--green)]">g</span>
+    <span className="inline-block -rotate-6 text-[var(--orange)]">i</span>
+    <span className="inline-block -translate-y-1 rotate-3 text-[var(--purple)]">n</span>
+    <span className="inline-block translate-y-1 -rotate-3 text-[var(--pink)]">a</span>
+    <span className="inline-block rotate-6 text-[var(--yellow)]">t</span>
+    <span className="inline-block -translate-y-1 -rotate-6 text-[var(--cyan)]">i</span>
+    <span className="inline-block translate-y-1 rotate-3 text-[var(--green)]">o</span>
+    <span className="inline-block -rotate-3 text-[var(--orange)]">n</span>
+  </span>
+</h2>
+
+            <p className="mt-4 max-w-4xl text-lg leading-relaxed text-[var(--text-soft)]">
+              Each artwork on this page can be minted as a limited digital edition on Solana.
+  Every mint supports Oliver directly and brings Olimagine one step
+  closer to its $50K milestone - the point where preparation for the
+  future Olimagine Fund begins.
             </p>
+            <div className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-sm font-semibold">
+  <span className="text-[var(--pink)]">
+    100 editions per artwork
+  </span>
+
+  <span className="text-[var(--text-muted)]">•</span>
+
+  <span className="text-[var(--yellow)]">
+    0.02 SOL + network fee
+  </span>
+
+  <span className="text-[var(--text-muted)]">•</span>
+
+  <span className="text-[var(--cyan)]">
+    Solana Devnet
+  </span>
+</div>
           </div>
 
           <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
@@ -128,118 +161,132 @@ export default function Home() {
       <FanArtPreview />
 
       {/* ROADMAP */}
-      <section
-        id="roadmap"
-        className="scroll-mt-28 px-6 py-24 sm:px-10 lg:px-16"
-      >
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-12">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-purple-300">
-              Roadmap
-            </p>
+<section
+  id="roadmap"
+  className="scroll-mt-28 px-6 py-24 sm:px-10 lg:px-16"
+>
+  <div className="mx-auto max-w-7xl">
+    <div className="mb-12">
+      <p className="mb-3 text-sm font-semibold uppercase tracking-[0.3em] text-[var(--purple)]">
+        Roadmap
+      </p>
 
-            <h2 className="text-4xl font-bold sm:text-5xl">
-              From one little gallery
-              <br />
-              <span className="text-yellow-300">
-                to something bigger.
-              </span>
-            </h2>
+      <h2 className="text-4xl font-bold sm:text-5xl">
+        From one little gallery
+        <br />
+        <span className="text-[var(--yellow)]">
+          to something bigger.
+        </span>
+      </h2>
 
-            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-white/70">
-              Olimagine starts with Oliver&apos;s art. Each step builds toward
-              a larger universe where art can create lasting value for him
-              and, one day, help other children too.
-            </p>
-          </div>
+      <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--text-muted)]">
+        Olimagine starts with Oliver&apos;s art. Each step builds toward
+        a larger universe where art can create lasting value for him
+        and, one day, help other children too.
+      </p>
+    </div>
 
-          <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-            {/* 01 */}
-            <div className="rounded-[28px] border border-pink-400/30 bg-[#0d0918]/80 p-6">
-              <p className="text-sm font-bold text-pink-300">01</p>
+    <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 
-              <h3 className="mt-3 text-xl font-semibold">
-                Build the prototype
-              </h3>
+      {/* 01 */}
+      <div className="rounded-[28px] border border-[var(--pink)]/35 bg-[var(--surface)] p-6">
+        <p className="text-sm font-bold text-[var(--pink)]">
+          01
+        </p>
 
-              <p className="mt-2 leading-relaxed text-white/70">
-                Launch a working Olimagine MVP with wallet connection and
-                digital collectibles on Solana Devnet.
-              </p>
-            </div>
+        <h3 className="mt-3 text-xl font-semibold">
+          Build the prototype
+        </h3>
 
-            {/* 02 */}
-            <div className="rounded-[28px] border border-orange-400/30 bg-[#0d0918]/80 p-6">
-              <p className="text-sm font-bold text-orange-300">02</p>
+        <p className="mt-2 leading-relaxed text-[var(--text-muted)]">
+          Launch a working Olimagine MVP with wallet connection and
+          digital collectibles on Solana Devnet.
+        </p>
+      </div>
 
-              <h3 className="mt-3 text-xl font-semibold">
-                First collection
-              </h3>
+      {/* 02 */}
+      <div className="rounded-[28px] border border-[var(--orange)]/35 bg-[var(--surface)] p-6">
+        <p className="text-sm font-bold text-[var(--orange)]">
+          02
+        </p>
 
-              <p className="mt-2 leading-relaxed text-white/70">
-                Bring selected original works by Oliver on-chain as
-                collectible digital art.
-              </p>
-            </div>
+        <h3 className="mt-3 text-xl font-semibold">
+          First collection
+        </h3>
 
-            {/* 03 */}
-            <div className="rounded-[28px] border border-yellow-300/30 bg-[#0d0918]/80 p-6">
-              <p className="text-sm font-bold text-yellow-300">03</p>
+        <p className="mt-2 leading-relaxed text-[var(--text-muted)]">
+          Bring selected original works by Oliver on-chain as
+          collectible digital art.
+        </p>
+      </div>
 
-              <h3 className="mt-3 text-xl font-semibold">
-                Grow Oliver&apos;s assets
-              </h3>
+      {/* 03 */}
+      <div className="rounded-[28px] border border-[var(--yellow)]/35 bg-[var(--surface)] p-6">
+        <p className="text-sm font-bold text-[var(--yellow)]">
+          03
+        </p>
 
-              <p className="mt-2 leading-relaxed text-white/70">
-                Grow the gallery and build verified assets for Oliver
-                through his original art.
-              </p>
-            </div>
+        <h3 className="mt-3 text-xl font-semibold">
+          Grow Oliver&apos;s assets
+        </h3>
 
-            {/* 04 */}
-            <div className="rounded-[28px] border border-green-400/30 bg-[#0d0918]/80 p-6">
-              <p className="text-sm font-bold text-green-300">04</p>
+        <p className="mt-2 leading-relaxed text-[var(--text-muted)]">
+          Grow the gallery and build verified assets for Oliver
+          through his original art.
+        </p>
+      </div>
 
-              <h3 className="mt-3 text-xl font-semibold">
-                Reach the $50K milestone
-              </h3>
+      {/* 04 */}
+      <div className="rounded-[28px] border border-[var(--green)]/35 bg-[var(--surface)] p-6">
+        <p className="text-sm font-bold text-[var(--green)]">
+          04
+        </p>
 
-              <p className="mt-2 leading-relaxed text-white/70">
-                Reach $50,000 in verified assets accumulated for Oliver
-                and unlock the next chapter.
-              </p>
-            </div>
+        <h3 className="mt-3 text-xl font-semibold">
+          Reach the $50K milestone
+        </h3>
 
-            {/* 05 */}
-            <div className="rounded-[28px] border border-cyan-400/30 bg-[#0d0918]/80 p-6">
-              <p className="text-sm font-bold text-cyan-300">05</p>
+        <p className="mt-2 leading-relaxed text-[var(--text-muted)]">
+          Reach $50,000 in verified assets accumulated for Oliver
+          and unlock the next chapter.
+        </p>
+      </div>
 
-              <h3 className="mt-3 text-xl font-semibold">
-                Prepare the Olimagine Fund
-              </h3>
+      {/* 05 */}
+      <div className="rounded-[28px] border border-[var(--cyan)]/35 bg-[var(--surface)] p-6">
+        <p className="text-sm font-bold text-[var(--cyan)]">
+          05
+        </p>
 
-              <p className="mt-2 leading-relaxed text-white/70">
-                Begin the legal and organizational work required to create
-                the future Olimagine Fund.
-              </p>
-            </div>
+        <h3 className="mt-3 text-xl font-semibold">
+          Prepare the Olimagine Fund
+        </h3>
 
-            {/* 06 */}
-            <div className="rounded-[28px] border border-purple-400/30 bg-[#0d0918]/80 p-6">
-              <p className="text-sm font-bold text-purple-300">06</p>
+        <p className="mt-2 leading-relaxed text-[var(--text-muted)]">
+          Begin the legal and organizational work required to create
+          the future Olimagine Fund.
+        </p>
+      </div>
 
-              <h3 className="mt-3 text-xl font-semibold">
-                Open the universe
-              </h3>
+      {/* 06 */}
+      <div className="rounded-[28px] border border-[var(--purple)]/35 bg-[var(--surface)] p-6">
+        <p className="text-sm font-bold text-[var(--purple)]">
+          06
+        </p>
 
-              <p className="mt-2 leading-relaxed text-white/70">
-                Introduce future charity collections and Contributed Art,
-                bringing more artists into Olimagine&apos;s mission.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+        <h3 className="mt-3 text-xl font-semibold">
+          Open the universe
+        </h3>
+
+        <p className="mt-2 leading-relaxed text-[var(--text-muted)]">
+          Introduce future charity collections and Contributed Art,
+          bringing more artists into Olimagine&apos;s mission.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
     </main>
   );
 }

@@ -22,22 +22,41 @@ export default function FanArtPreview() {
   }, [featuredArtworks.length]);
 
   return (
-  <section className="px-6 py-24 text-center">
-    <div className="mx-auto max-w-7xl">
-      <p className="text-sm uppercase tracking-[0.35em] text-white/50">
-        Fan Art • Not for Sale
-      </p>
+  <section className="px-6 pb-20 pt-10 text-center">
+  <div className="mx-auto max-w-7xl">
+    <p className="text-sm font-semibold uppercase tracking-[0.35em] text-[var(--pink)]">
+      Fan Art • Not for Sale
+    </p>
 
-      <h2 className="mt-4 text-4xl font-black sm:text-6xl">
-        Stories through Oliver&apos;s eyes
-      </h2>
+    <h2 className="mt-4 text-4xl font-black sm:text-6xl">
+      Stories through Oliver&apos;s{" "}
+      <span className="inline-flex items-baseline">
+        <span className="inline-block -rotate-6 text-[var(--cyan)]">e</span>
+        <span className="inline-block translate-y-1 rotate-6 text-[var(--yellow)]">y</span>
+        <span className="inline-block -translate-y-1 -rotate-3 text-[var(--green)]">e</span>
+        <span className="inline-block rotate-6 text-[var(--pink)]">s</span>
+      </span>
+    </h2>
 
-      <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/60">
-        Characters, monsters and imaginary worlds — redrawn through Oliver&apos;s
-        own imagination.
-      </p>
+    <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-[var(--text-soft)]">
+      Characters, monsters and imaginary worlds - redrawn through Oliver&apos;s
+      own imagination.
+    </p>
+    <div className="mt-7 flex flex-wrap items-center justify-center gap-3 text-sm font-black uppercase tracking-[0.16em]">
+  <span className="inline-block -rotate-2 rounded-full border border-[var(--pink)]/40 px-4 py-2 text-[var(--pink)]">
+    Characters
+  </span>
 
-      <div className="relative mx-auto mt-12 aspect-square w-full max-w-[600px] overflow-hidden">
+  <span className="inline-block rotate-2 rounded-full border border-[var(--yellow)]/40 px-4 py-2 text-[var(--yellow)]">
+    Monsters
+  </span>
+
+  <span className="inline-block -rotate-1 rounded-full border border-[var(--cyan)]/40 px-4 py-2 text-[var(--cyan)]">
+    Imaginary Worlds
+  </span>
+</div>
+
+    <div className="relative mx-auto mt-8 aspect-square w-full max-w-[600px] overflow-hidden">
         {featuredArtworks.map((artwork, index) => (
           <Image
             key={artwork.id}
@@ -56,18 +75,23 @@ export default function FanArtPreview() {
       key={artwork.id}
       className={`h-2 rounded-full transition-all duration-500 ${
         index === currentIndex
-          ? "w-6 bg-white"
-          : "w-2 bg-white/30"
+          ? "w-7 bg-[var(--pink)]"
+          : "w-2 bg-[var(--border)]"
       }`}
     />
   ))}
 </div>
 <a
   href="/fan-art"
-  className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 font-semibold transition hover:bg-white hover:text-[#160d24]"
+  className="group mt-8 inline-flex items-center gap-3 rounded-full bg-[var(--yellow)] px-7 py-3 font-bold text-[var(--surface)] transition hover:-translate-y-0.5 hover:shadow-[var(--glow-yellow)]"
 >
   Explore all Fan Art
-  <span aria-hidden="true">→</span>
+  <span
+    aria-hidden="true"
+    className="inline-block transition-transform group-hover:translate-x-1"
+  >
+    →
+  </span>
 </a>
       </div>
     </section>
