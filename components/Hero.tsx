@@ -156,18 +156,21 @@ export default function Hero() {
             className="absolute right-52 bottom-4 z-20 w-6 rotate-12 object-contain"
           />
 
-          {/* Earth + glow */}
+                    {/* Earth + glow */}
           <div className="relative z-10 -translate-x-[160px]">
 
             {/* Glow */}
             <div className="absolute left-1/2 top-1/2 h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.30)_0%,rgba(59,130,246,0.14)_45%,transparent_72%)]" />
 
             {/* Earth */}
-            <img
-              src="/brand/earth-logo.png"
-              alt="Oliver's Earth artwork"
-              className="relative z-10 w-72 object-contain md:w-[380px]"
-            />
+            <div className="relative z-10">
+              <img
+                src="/brand/earth-logo.png"
+                alt="Oliver's Earth artwork"
+                className="earth-spin w-72 object-contain md:w-[380px]"
+              />
+            </div>
+
           </div>
 
         </div>
