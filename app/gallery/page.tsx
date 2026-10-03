@@ -1,5 +1,5 @@
 import Image from "next/image";
-
+import WalletBalance from "@/components/gallery/WalletBalance";
 export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-white">
@@ -267,11 +267,14 @@ export default function GalleryPage() {
         Reaching this milestone unlocks the next chapter: preparing the
         future Olimagine Fund.
       </p>
+      <WalletBalance />
 
-      <div className="mt-7 h-3 overflow-hidden rounded-full bg-white/10">
-        <div className="h-full w-0 rounded-full bg-[var(--yellow)]" />
-      </div>
-
+      {/* 
+<div className="mt-7 h-3 overflow-hidden rounded-full bg-white/10">
+  <div className="h-full w-0 rounded-full bg-[var(--yellow)]" />
+</div>
+*/}
+      
       <p className="mt-2 text-sm text-[var(--text-muted)]">
         The journey starts here.
       </p>

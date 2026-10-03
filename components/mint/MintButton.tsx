@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useWallet } from "@solana/wallet-adapter-react";
 import {
   generateSigner,
@@ -10,6 +10,7 @@ import {
 import { walletAdapterIdentity } from "@metaplex-foundation/umi-signer-wallet-adapters";
 import { createUmi } from "@metaplex-foundation/umi-bundle-defaults";
 import {
+  fetchCandyMachine,
   mplCandyMachine,
   mintV1,
 } from "@metaplex-foundation/mpl-core-candy-machine";
@@ -69,7 +70,32 @@ export default function MintButton({ artworkName }: MintButtonProps) {
 
   const [isMinting, setIsMinting] = useState(false);
   const [message, setMessage] = useState("");
+  const [mintedCount, setMintedCount] = useState<number | null>(null);
 
+useEffect(() => {
+  async function loadMintedCount() {
+    const artwork = ARTWORKS[artworkName];
+
+    if (!artwork) return;
+
+    try {
+      const umi = createUmi("https://api.devnet.solana.com")
+        .use(mplCore())
+        .use(mplCandyMachine());
+
+      const candyMachine = await fetchCandyMachine(
+        umi,
+        publicKey(artwork.candyMachine)
+      );
+
+      setMintedCount(Number(candyMachine.itemsRedeemed));
+    } catch (error) {
+      console.error("Failed to load mint count:", error);
+    }
+  }
+
+  loadMintedCount();
+}, [artworkName]);
   async function handleMint() {
     const artwork = ARTWORKS[artworkName];
 
@@ -114,7 +140,9 @@ export default function MintButton({ artworkName }: MintButtonProps) {
 
       console.log("Mint result:", result);
       console.log("Minted asset:", asset.publicKey);
-
+      setMintedCount((current) =>
+  current === null ? 1 : Math.min(current + 1, 100)
+);
       setMessage(`Minted! ${asset.publicKey}`);
     } catch (error) {
       console.error("Mint failed:", error);
@@ -126,6 +154,26 @@ export default function MintButton({ artworkName }: MintButtonProps) {
 
   return (
     <div className="mt-4">
+      <div className="mb-3">
+  <div className="mb-2 flex items-center justify-between text-xs font-semibold">
+    <span className="text-[var(--text-muted)]">
+      Minted
+    </span>
+
+    <span className="text-[var(--cyan)]">
+      {mintedCount === null ? "Loading..." : `${mintedCount} / 100`}
+    </span>
+  </div>
+
+  <div className="h-1.5 overflow-hidden rounded-full bg-[var(--border)]">
+    <div
+      className="h-full rounded-full bg-[var(--cyan)] transition-all duration-500"
+      style={{
+        width: `${Math.min((mintedCount ?? 0), 100)}%`,
+      }}
+    />
+  </div>
+</div>
       <button
         type="button"
         disabled={isMinting}
