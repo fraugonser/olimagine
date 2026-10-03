@@ -23,7 +23,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#160d24] text-white">
+    <main id="top" className="min-h-screen bg-[#160d24] text-white">
       <Hero />
 
       {/* FEATURED ART */}
@@ -283,6 +283,23 @@ export default function Home() {
           bringing more artists into Olimagine&apos;s mission.
         </p>
       </div>
+
+    </div>
+       {/* Back to top */}
+
+    <div className="mt-12 flex justify-center">
+
+      <a
+
+        href="#top"
+
+        className="rounded-2xl border border-[var(--yellow)]/60 bg-[var(--yellow)]/5 px-7 py-3 font-semibold text-[var(--yellow)] transition-all duration-300 hover:border-[var(--yellow)] hover:bg-[var(--yellow)]/10 hover:shadow-[var(--glow-yellow)]"
+
+      >
+
+        ↑ Back to top
+
+      </a>
 
     </div>
   </div>
