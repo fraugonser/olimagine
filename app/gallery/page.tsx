@@ -1,12 +1,17 @@
 import Image from "next/image";
 import WalletBalance from "@/components/gallery/WalletBalance";
+import StarField from "@/components/ui/StarField";
 export default function GalleryPage() {
   return (
     <main className="min-h-screen bg-[var(--background)] text-white">
 
       {/* GALLERY HERO */}
       <section className="relative overflow-hidden border-b border-[var(--border)]">
-        <div className="mx-auto grid min-h-[560px] max-w-7xl items-center px-6 py-14 md:grid-cols-[1fr_0.9fr]">
+        {/* Star field */}
+        <StarField />
+
+  
+        <div className="relative z-10 mx-auto grid min-h-[560px] max-w-7xl items-center px-6 py-14 md:grid-cols-[1fr_0.9fr]">
 
           {/* LEFT — TEXT */}
           <div className="relative z-20 max-w-2xl">
@@ -36,68 +41,72 @@ export default function GalleryPage() {
             </p>
           </div>
 
-          {/* RIGHT — OLIVER */}
-<div className="relative flex min-h-[430px] items-end justify-start">
+                    {/* RIGHT — OLIVER */}
+          <div className="relative flex min-h-[430px] items-end justify-center">
 
-  {/* soft glow behind Oliver */}
-  <div className="absolute left-[-35px] bottom-[-35px] h-[400px] w-[400px] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.18)_0%,rgba(59,130,246,0.08)_45%,transparent_72%)]" />
+            {/* Responsive art scene */}
+            <div className="relative aspect-square w-full max-w-[430px]">
 
-  {/* Moon */}
-  <Image
-    src="/brand/doodles/moon.PNG"
-    alt=""
-    width={170}
-    height={170}
-    className="absolute right-[-20px] top-[5px] z-10 w-[150px] object-contain"
-  />
+              {/* soft glow behind Oliver */}
+              <div className="absolute bottom-[2%] left-[8%] h-[82%] w-[82%] rounded-full bg-[radial-gradient(circle,rgba(168,85,247,0.18)_0%,rgba(59,130,246,0.08)_45%,transparent_72%)]" />
 
-  {/* Saturn */}
-  <Image
-    src="/brand/doodles/saturn.PNG"
-    alt=""
-    width={110}
-    height={110}
-    className="absolute right-[35px] bottom-[45px] z-20 w-[95px] rotate-12 object-contain"
-  />
+              {/* Moon */}
+              <Image
+                src="/brand/doodles/moon.PNG"
+                alt=""
+                width={170}
+                height={170}
+                className="absolute right-[0%] top-[2%] z-10 w-[35%] object-contain"
+              />
 
-  {/* Blue planet */}
-  <Image
-    src="/brand/doodles/blueplanet.PNG"
-    alt=""
-    width={70}
-    height={70}
-    className="absolute left-[-45px] top-[40px] z-20 w-[60px] -rotate-12 object-contain"
-  />
+              {/* Saturn */}
+              <Image
+                src="/brand/doodles/saturn.PNG"
+                alt=""
+                width={110}
+                height={110}
+                className="absolute bottom-[5%] right-[3%] z-20 w-[22%] rotate-12 object-contain"
+              />
 
-  {/* Yellow star */}
-  <Image
-    src="/brand/doodles/yellowstar.PNG"
-    alt=""
-    width={55}
-    height={55}
-    className="absolute right-[130px] top-[80px] z-20 w-[45px] rotate-12 object-contain"
-  />
+              {/* Blue planet */}
+              <Image
+                src="/brand/doodles/blueplanet.PNG"
+                alt=""
+                width={70}
+                height={70}
+                className="absolute left-[0%] top-[15%] z-20 w-[14%] -rotate-12 object-contain"
+              />
 
-  {/* Pink star */}
-  <Image
-    src="/brand/doodles/pinkstar.PNG"
-    alt=""
-    width={45}
-    height={45}
-    className="absolute left-[-10px] bottom-[70px] z-20 w-[38px] -rotate-12 object-contain"
-  />
+              {/* Yellow star */}
+              <Image
+                src="/brand/doodles/yellowstar.PNG"
+                alt=""
+                width={55}
+                height={55}
+                className="absolute left-[14%] top-[38%] z-20 w-[11%] rotate-12 object-contain"
+              />
 
-  {/* Oliver */}
-  <Image
-    src="/brand/characters/Oliver-doodle.png"
-    alt="Illustration of Oliver waving"
-    width={500}
-    height={500}
-    priority
-    className="relative z-10 w-[360px] object-contain md:w-[430px]"
-  />
+              {/* Pink star */}
+              <Image
+                src="/brand/doodles/pinkstar.PNG"
+                alt=""
+                width={45}
+                height={45}
+                className="absolute bottom-[12%] left-[2%] z-20 w-[9%] -rotate-12 object-contain"
+              />
 
-</div>
+              {/* Oliver */}
+              <Image
+                src="/brand/characters/Oliver-doodle.png"
+                alt="Illustration of Oliver waving"
+                width={500}
+                height={500}
+                priority
+                className="absolute bottom-0 left-1/2 z-10 w-[84%] -translate-x-1/2 object-contain"
+              />
+
+            </div>
+          </div>
         </div>
       </section>
             {/* HOW IT WORKS */}

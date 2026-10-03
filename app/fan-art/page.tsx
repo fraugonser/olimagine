@@ -4,6 +4,7 @@ import BuyMeAKakao from "@/components/solana/BuyMeAKakao";
 import Image from "next/image";
 import { useState } from "react";
 import { fanArtworks } from "@/data/fanArt";
+import StarField from "@/components/ui/StarField";
 
 export default function FanArtPage() {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -32,7 +33,10 @@ export default function FanArtPage() {
       <div className="mx-auto max-w-7xl">
 
         {/* HERO */}
-        <div className="grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
+<section className="relative -mx-6 -mt-20 overflow-hidden px-6 pt-20">
+  <StarField />
+
+  <div className="relative z-10 grid gap-12 md:grid-cols-[1.05fr_0.95fr] md:items-center">
           {/* LEFT */}
           <div>
             <p className="olimagine-kicker">
@@ -88,7 +92,7 @@ export default function FanArtPage() {
             <div className="absolute right-[2%] top-[18%] h-16 w-16 rounded-full border-2 border-dashed border-[var(--purple)] opacity-70" />
           </div>
         </div>
-
+</section>
         {/* GALLERY */}
 <div className="mt-10 flex items-end justify-between gap-6">
   <div>
