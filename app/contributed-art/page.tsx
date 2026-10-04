@@ -1,3 +1,5 @@
+import Image from "next/image";
+import StarField from "@/components/ui/StarField";
 export default function ContributedArtPage() {
   const steps = [
     {
@@ -61,34 +63,79 @@ export default function ContributedArtPage() {
             </div>
           </div>
 
-          {/* playful visual */}
-          <div className="relative hidden min-h-[330px] md:block">
-            <div className="absolute left-[8%] top-[8%] rotate-[-9deg] text-7xl">
-              🎨
-            </div>
+        {/* contributed art visual */}
+<div className="relative min-h-[390px] md:min-h-[460px]">
 
-            <div className="absolute right-[12%] top-[5%] rotate-[10deg] text-5xl">
-              ⭐
-            </div>
+  {/* scattered Olimagine stars */}
+  <div className="absolute -bottom-12 -right-12 -top-12 -left-32 opacity-90">
+    <StarField />
+  </div>
 
-            <div className="absolute left-[34%] top-[35%] flex h-40 w-40 rotate-[5deg] items-center justify-center rounded-[36px] border-2 border-[var(--pink)] bg-[var(--surface)] text-7xl shadow-[var(--glow-pink)]">
-              🖼️
-            </div>
+  {/* colored cosmic dust */}
+  <span className="absolute left-[0%] top-[12%] h-2 w-2 rounded-full bg-[var(--pink)] shadow-[0_0_16px_var(--pink)]" />
+  <span className="absolute left-[8%] top-[29%] h-1.5 w-1.5 rounded-full bg-[var(--yellow)]" />
+  <span className="absolute left-[2%] top-[58%] h-2.5 w-2.5 rounded-full bg-[var(--cyan)] shadow-[0_0_15px_var(--cyan)]" />
+  <span className="absolute left-[14%] bottom-[8%] h-1.5 w-1.5 rounded-full bg-[var(--green)]" />
 
-            <div className="absolute bottom-[4%] left-[14%] rotate-[-8deg] text-5xl">
-              ✨
-            </div>
+  <span className="absolute right-[5%] top-[5%] h-2 w-2 rounded-full bg-[var(--yellow)] shadow-[0_0_16px_var(--yellow)]" />
+  <span className="absolute right-[0%] top-[34%] h-1.5 w-1.5 rounded-full bg-[var(--pink)]" />
+  <span className="absolute right-[7%] top-[63%] h-2.5 w-2.5 rounded-full bg-[var(--purple)] shadow-[0_0_16px_var(--purple)]" />
+  <span className="absolute right-[16%] bottom-[3%] h-1.5 w-1.5 rounded-full bg-[var(--cyan)]" />
 
-            <div className="absolute bottom-[10%] right-[9%] rotate-[7deg] text-6xl">
-              🌍
-            </div>
+  {/* larger doodle stars */}
+  <span className="absolute left-[3%] top-[4%] rotate-12 text-4xl text-[var(--yellow)]">
+    ✦
+  </span>
 
-            <p className="absolute right-[4%] top-[46%] rotate-[7deg] text-2xl font-bold leading-tight text-[var(--cyan)]">
-              create
-              <br />
-              together
-            </p>
-          </div>
+  <span className="absolute -left-[3%] top-[42%] -rotate-12 text-3xl text-[var(--pink)]">
+    ✦
+  </span>
+
+  <span className="absolute bottom-[3%] left-[25%] rotate-12 text-3xl text-[var(--cyan)]">
+    ✦
+  </span>
+
+  <span className="absolute -right-[2%] top-[18%] rotate-12 text-3xl text-[var(--green)]">
+    ✦
+  </span>
+
+  <span className="absolute bottom-[13%] right-[1%] -rotate-12 text-4xl text-[var(--yellow)]">
+    ✦
+  </span>
+
+  {/* little irregular dust clusters */}
+  <div className="absolute left-[5%] top-[72%] flex rotate-[-18deg] gap-3">
+    <span className="h-1 w-1 rounded-full bg-[var(--pink)]" />
+    <span className="mt-3 h-2 w-2 rounded-full bg-[var(--yellow)]" />
+    <span className="-mt-2 h-1.5 w-1.5 rounded-full bg-[var(--cyan)]" />
+  </div>
+
+  <div className="absolute right-[3%] top-[48%] flex rotate-12 gap-3">
+    <span className="mt-4 h-1 w-1 rounded-full bg-[var(--green)]" />
+    <span className="h-2 w-2 rounded-full bg-[var(--pink)]" />
+    <span className="mt-7 h-1.5 w-1.5 rounded-full bg-[var(--yellow)]" />
+  </div>
+
+  {/* main illustration */}
+  <div className="absolute left-1/2 top-1/2 z-10 w-[88%] max-w-[560px] -translate-x-1/2 -translate-y-1/2">
+    <Image
+      src="/brand/contributed-art/contributedart.png"
+      alt="Artists creating together in the Olimagine universe"
+      width={1200}
+      height={800}
+      className="h-auto w-full object-contain"
+      priority
+    />
+  </div>
+
+  {/* foreground particles crossing image boundary */}
+  <span className="absolute left-[12%] top-[37%] z-20 h-2 w-2 rounded-full bg-[var(--cyan)]" />
+  <span className="absolute right-[13%] top-[30%] z-20 h-2.5 w-2.5 rounded-full bg-[var(--yellow)]" />
+  <span className="absolute bottom-[19%] left-[19%] z-20 text-2xl text-[var(--pink)]">
+    ✦
+  </span>
+
+</div>
         </div>
       </section>
 

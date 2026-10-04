@@ -57,40 +57,46 @@ export default function FanArtPage() {
             </div>
           </div>
 
-          {/* TEMPORARY DOODLE PLACEHOLDER */}
-          <div className="relative hidden min-h-[390px] md:block">
-            <div className="absolute left-[12%] top-[8%] h-3 w-3 rotate-12 bg-[var(--yellow)]" />
+          {/* FEATURED FAN ART */}
+<div className="relative min-h-[390px]">
 
-            <div className="absolute right-[18%] top-[4%] text-4xl font-black text-[var(--pink)]">
-              ✦
-            </div>
+  {/* Scar */}
+  <div className="absolute left-[2%] top-[3%] z-10 w-[58%] -rotate-3 overflow-hidden rounded-[26px] border-2 border-[var(--pink)] bg-[var(--surface)] p-2 shadow-[var(--glow-pink)]">
+    <div className="relative aspect-square overflow-hidden rounded-[19px]">
+      <Image
+        src="/fan-art/Scar.jpg"
+        alt="Fan artwork by Oliver"
+        fill
+        sizes="(max-width: 768px) 55vw, 300px"
+        className="object-contain"
+      />
+    </div>
+  </div>
 
-            <div className="absolute left-[20%] top-[25%] h-48 w-40 -rotate-6 rounded-[26px] border-2 border-[var(--pink)] bg-[var(--surface)] shadow-[var(--glow-pink)]">
-              <div className="flex h-full items-center justify-center text-center text-sm font-bold uppercase tracking-[0.2em] text-[var(--pink)]">
-                doodle
-                <br />
-                art
-              </div>
-            </div>
+  {/* Kotivorobei */}
+  <div className="absolute bottom-[2%] right-[2%] z-20 w-[52%] rotate-3 overflow-hidden rounded-[26px] border-2 border-[var(--cyan)] bg-[var(--surface)] p-2 shadow-[var(--glow-cyan)]">
+    <div className="relative aspect-square overflow-hidden rounded-[19px]">
+      <Image
+        src="/fan-art/Kotivorobei.jpg"
+        alt="Fan artwork by Oliver"
+        fill
+        sizes="(max-width: 768px) 50vw, 280px"
+        className="object-contain"
+      />
+    </div>
+  </div>
 
-            <div className="absolute right-[12%] top-[35%] h-40 w-36 rotate-6 rounded-[24px] border-2 border-[var(--cyan)] bg-[var(--surface)] shadow-[var(--glow-cyan)]">
-              <div className="flex h-full items-center justify-center text-center text-sm font-bold uppercase tracking-[0.2em] text-[var(--cyan)]">
-                strange
-                <br />
-                creatures
-              </div>
-            </div>
+  {/* little doodle accents */}
+  <span className="absolute right-[5%] top-[3%] text-3xl text-[var(--yellow)]">
+    ✦
+  </span>
 
-            <div className="absolute bottom-[9%] left-[12%] rotate-[-8deg] text-xl font-bold text-[var(--yellow)]">
-              imagination →
-            </div>
+  <span className="absolute bottom-[4%] left-[5%] text-2xl text-[var(--pink)]">
+    ✦
+  </span>
 
-            <div className="absolute bottom-[14%] right-[18%] text-3xl text-[var(--green)]">
-              ✦
-            </div>
+</div>
 
-            <div className="absolute right-[2%] top-[18%] h-16 w-16 rounded-full border-2 border-dashed border-[var(--purple)] opacity-70" />
-          </div>
         </div>
 </section>
         {/* GALLERY */}
