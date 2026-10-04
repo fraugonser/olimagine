@@ -29,7 +29,7 @@ export default function FanArtPage() {
     selectedIndex !== null ? fanArtworks[selectedIndex] : null;
 
   return (
-    <main className="olimagine-page px-6 py-20">
+    <main id="top" className="olimagine-page px-6 py-20">
       <div className="mx-auto max-w-7xl">
 
         {/* HERO */}
@@ -187,6 +187,15 @@ export default function FanArtPage() {
           </button>
         </div>
       )}
+      {/* Back to top */}
+<div className="mt-12 flex justify-center">
+  <a
+    href="#top"
+    className="rounded-2xl border border-[var(--yellow)]/60 bg-[var(--yellow)]/5 px-7 py-3 font-semibold text-[var(--yellow)] transition-all duration-300 hover:border-[var(--yellow)] hover:bg-[var(--yellow)]/10 hover:shadow-[var(--glow-yellow)]"
+  >
+    ↑ Back to top
+  </a>
+</div>
     </main>
   );
 }

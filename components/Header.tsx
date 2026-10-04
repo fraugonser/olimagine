@@ -9,17 +9,22 @@ import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 export default function Header() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const [walletMenuOpen, setWalletMenuOpen] = useState(false);
   const { publicKey, connected, disconnect } = useWallet();
   const { setVisible } = useWalletModal();
 
   const handleWalletClick = () => {
-    if (connected) {
-      disconnect();
-    } else {
-      setVisible(true);
-    }
-  };
+  if (connected) {
+    setWalletMenuOpen((open) => !open);
+  } else {
+    setVisible(true);
+  }
+};
+
+const handleDisconnect = async () => {
+  await disconnect();
+  setWalletMenuOpen(false);
+};
 
   const closeMenu = () => setMenuOpen(false);
 
@@ -120,20 +125,62 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex shrink-0 items-center gap-2">
-          <button
-            onClick={handleWalletClick}
-            className="rounded-xl border border-yellow-200 bg-yellow-300 px-3 py-2 text-sm font-bold whitespace-nowrap text-black shadow-[0_0_18px_rgba(253,224,71,0.20)] transition-all duration-300 hover:bg-yellow-200 md:rounded-2xl md:border-2 md:px-6 md:py-3 md:text-base"
-          >
-            <span className="md:hidden">{walletLabel}</span>
+          <div className="relative">
+  <button
+    type="button"
+    onClick={handleWalletClick}
+    aria-expanded={connected ? walletMenuOpen : undefined}
+    className="rounded-xl border border-yellow-200 bg-yellow-300 px-3 py-2 text-sm font-bold whitespace-nowrap text-black shadow-[0_0_18px_rgba(253,224,71,0.20)] transition-all duration-300 hover:bg-yellow-200 md:rounded-2xl md:border-2 md:px-6 md:py-3 md:text-base"
+  >
+    <span className="md:hidden">
+      {walletLabel}
+      {connected && " ▾"}
+    </span>
 
-            <span className="hidden md:inline">
-              {connected && publicKey
-                ? `${publicKey.toBase58().slice(0, 4)}...${publicKey
-                    .toBase58()
-                    .slice(-4)}`
-                : "Connect Wallet"}
-            </span>
-          </button>
+    <span className="hidden md:inline">
+      {connected && publicKey
+        ? `${publicKey.toBase58().slice(0, 4)}...${publicKey
+            .toBase58()
+            .slice(-4)} ▾`
+        : "Connect Wallet"}
+    </span>
+  </button>
+
+  {connected && publicKey && walletMenuOpen && (
+    <div className="absolute right-0 top-full z-[70] mt-3 w-56 overflow-hidden rounded-2xl border border-[var(--border)] bg-[var(--surface)] p-2 shadow-2xl">
+      <div className="border-b border-white/10 px-3 py-3">
+        <p className="text-xs text-[var(--text-muted)]">
+          Connected wallet
+        </p>
+
+        <p className="mt-1 font-mono text-sm text-white">
+          {publicKey.toBase58().slice(0, 6)}...
+          {publicKey.toBase58().slice(-6)}
+        </p>
+      </div>
+
+      <a
+        href={`https://explorer.solana.com/address/${publicKey.toBase58()}?cluster=devnet`}
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={() => setWalletMenuOpen(false)}
+        className="mt-2 flex w-full items-center justify-between rounded-xl px-3 py-3 text-sm font-semibold text-[var(--cyan)] transition-colors hover:bg-white/5"
+      >
+        <span>View on Explorer</span>
+        <span>↗</span>
+      </a>
+
+      <button
+        type="button"
+        onClick={handleDisconnect}
+        className="flex w-full items-center justify-between rounded-xl px-3 py-3 text-left text-sm font-semibold text-[var(--pink)] transition-colors hover:bg-white/5"
+      >
+        <span>Disconnect</span>
+        <span>×</span>
+      </button>
+    </div>
+  )}
+</div>
 
           {/* Mobile menu button */}
           <button
@@ -148,52 +195,79 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile navigation */}
+            {/* Mobile navigation */}
       {menuOpen && (
         <nav className="absolute left-0 top-full w-full border-t border-white/10 bg-[#0d0912] px-6 py-5 shadow-2xl md:hidden">
           <div className="flex flex-col gap-1">
             <a
               href="/"
               onClick={closeMenu}
-              className="rounded-xl px-4 py-3 font-semibold hover:bg-white/5"
+              className={`flex items-center gap-2 rounded-xl px-4 py-3 font-semibold transition-colors hover:bg-white/5 ${
+                pathname === "/" ? "bg-white/5 text-[var(--yellow)]" : ""
+              }`}
             >
+              {pathname === "/" && (
+                <span className="text-[var(--yellow)]">✦</span>
+              )}
               Home
             </a>
 
             <a
               href="/gallery"
               onClick={closeMenu}
-              className="rounded-xl px-4 py-3 font-semibold text-pink-200 hover:bg-white/5"
+              className={`flex items-center gap-2 rounded-xl px-4 py-3 font-semibold transition-colors hover:bg-white/5 ${
+                pathname === "/gallery"
+                  ? "bg-white/5 text-[var(--yellow)]"
+                  : "text-pink-200"
+              }`}
             >
+              {pathname === "/gallery" && (
+                <span className="text-[var(--yellow)]">✦</span>
+              )}
               Gallery
             </a>
 
             <a
               href="/fan-art"
               onClick={closeMenu}
-              className="rounded-xl px-4 py-3 font-semibold text-yellow-200 hover:bg-white/5"
+              className={`flex items-center gap-2 rounded-xl px-4 py-3 font-semibold transition-colors hover:bg-white/5 ${
+                pathname === "/fan-art"
+                  ? "bg-white/5 text-[var(--yellow)]"
+                  : "text-yellow-200"
+              }`}
             >
+              {pathname === "/fan-art" && (
+                <span className="text-[var(--yellow)]">✦</span>
+              )}
               Fan Art
             </a>
 
             <a
               href="/contributed-art"
               onClick={closeMenu}
-              className="rounded-xl px-4 py-3 font-semibold text-green-200 hover:bg-white/5"
+              className={`flex items-center gap-2 rounded-xl px-4 py-3 font-semibold transition-colors hover:bg-white/5 ${
+                pathname === "/contributed-art"
+                  ? "bg-white/5 text-[var(--yellow)]"
+                  : "text-green-200"
+              }`}
             >
+              {pathname === "/contributed-art" && (
+                <span className="text-[var(--yellow)]">✦</span>
+              )}
               Contributed Art
             </a>
 
             <a
               href="/#roadmap"
               onClick={closeMenu}
-              className="rounded-xl px-4 py-3 font-semibold text-purple-200 hover:bg-white/5"
+              className="flex items-center gap-2 rounded-xl px-4 py-3 font-semibold text-purple-200 transition-colors hover:bg-white/5"
             >
               Roadmap
             </a>
           </div>
         </nav>
       )}
+
     </header>
   );
 }
