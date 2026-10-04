@@ -34,7 +34,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/75">
-            Olimagine is a digital gallery of original artwork by Oliver — a
+            Olimagine is a digital gallery of original artwork by Oliver - a
             young artist who sees the world in his own extraordinary way.
           </p>
 

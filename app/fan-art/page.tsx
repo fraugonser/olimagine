@@ -48,7 +48,7 @@ export default function FanArtPage() {
             </h1>
 
             <p className="mt-5 max-w-xl text-lg leading-8 text-[var(--text-muted)]">
-              Characters, stories and strange creatures Oliver loves — seen and
+              Characters, stories and strange creatures Oliver loves - seen and
               redrawn through his own imagination.
             </p>
 

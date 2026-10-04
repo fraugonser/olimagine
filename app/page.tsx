@@ -25,6 +25,181 @@ export default function Home() {
   return (
     <main id="top" className="min-h-screen bg-[#160d24] text-white">
       <Hero />
+     {/* OUR STORY */}
+<section
+  id="story"
+  className="relative scroll-mt-24 overflow-hidden border-y border-white/10 bg-[var(--surface)] px-6 py-24 sm:px-10 lg:px-16"
+>
+  {/* Background doodles */}
+<div
+  aria-hidden="true"
+  className="pointer-events-none absolute inset-0 opacity-50"
+>
+  <span className="absolute left-[3%] top-[9%] -rotate-12 text-xl text-[var(--pink)]">
+    ✦
+  </span>
+
+  <span className="absolute left-[13%] top-[29%] rotate-[18deg] text-5xl text-[var(--yellow)]">
+    ☆
+  </span>
+
+  <span className="absolute left-[5%] top-[52%] -rotate-[20deg] text-2xl text-[var(--cyan)]">
+    ✦
+  </span>
+
+  <span className="absolute left-[19%] bottom-[11%] rotate-12 text-4xl text-[var(--purple)]">
+    ☆
+  </span>
+
+  <span className="absolute left-[42%] top-[16%] rotate-[24deg] text-lg text-[var(--green)]">
+    ✦
+  </span>
+
+  <span className="absolute left-[47%] bottom-[24%] -rotate-12 text-3xl text-[var(--pink)]">
+    ✦
+  </span>
+
+  <span className="absolute right-[6%] top-[12%] rotate-12 text-4xl text-[var(--purple)]">
+    ☆
+  </span>
+
+  <span className="absolute right-[18%] top-[31%] -rotate-[18deg] text-xl text-[var(--cyan)]">
+    ✦
+  </span>
+
+  <span className="absolute right-[3%] top-[48%] rotate-[22deg] text-5xl text-[var(--yellow)]">
+    ☆
+  </span>
+
+  <span className="absolute right-[13%] bottom-[10%] -rotate-12 text-3xl text-[var(--pink)]">
+    ☆
+  </span>
+
+  {/* cosmic dust */}
+  <span className="absolute left-[8%] top-[38%] h-2 w-2 rounded-full bg-[var(--pink)]" />
+  <span className="absolute left-[31%] top-[21%] h-1.5 w-1.5 rounded-full bg-[var(--yellow)]" />
+  <span className="absolute left-[37%] bottom-[16%] h-2.5 w-2.5 rounded-full bg-[var(--cyan)]" />
+  <span className="absolute right-[28%] top-[23%] h-2 w-2 rounded-full bg-[var(--green)]" />
+  <span className="absolute right-[8%] bottom-[31%] h-1.5 w-1.5 rounded-full bg-[var(--orange)]" />
+</div>
+
+  <div className="relative z-10 mx-auto max-w-7xl">
+
+    {/* Heading */}
+    <div className="mb-14">
+      <p className="olimagine-kicker mb-4">
+        Our Story
+      </p>
+
+      <h2 className="w-full text-4xl font-black leading-tight sm:text-5xl lg:whitespace-nowrap lg:text-6xl">
+        Oliver sees the world{" "}
+        <span className="text-[var(--yellow)]">
+          a little differently.
+        </span>
+      </h2>
+    </div>
+
+    {/* Story body with real text wrapping */}
+    <div className="text-left text-base leading-8 text-[var(--text-soft)] sm:text-lg md:text-justify">
+
+      {/* Oliver */}
+      <figure className="mx-auto mb-10 w-full max-w-[440px] md:float-left md:mb-7 md:mr-14 md:w-[38%] lg:mr-16">
+
+        <div className="relative aspect-square w-full">
+
+          {/* Cosmic halo */}
+          <img
+            src="/brand/our-story/Ourstoryhalo.PNG"
+            alt=""
+           className="absolute inset-0 h-full w-full scale-[1.22] object-contain opacity-50"
+          />
+
+          {/* Oliver's self portrait */}
+          <img
+            src="/brand/our-story/Oliver-Selfportrait.PNG"
+            alt="Self portrait by Oliver"
+            className="absolute inset-0 z-10 h-full w-full object-contain"
+          />
+
+        </div>
+
+        {/* Artwork caption */}
+        <figcaption className="mt-8 text-center">
+          <p className="text-sm font-semibold text-white">
+            Self Portrait - Oliver, 2026
+          </p>
+
+          <p className="mt-1 text-xs text-[var(--text-muted)]">
+            Drawn by Oliver
+          </p>
+        </figcaption>
+
+      </figure>
+
+      {/* Story text */}
+      <div className="space-y-7">
+
+        <p>
+          Oliver is a seven-year-old non-speaking autistic boy with a huge
+          imagination. He may not communicate with words, but that doesn&apos;t
+          mean he has nothing to say.
+        </p>
+
+        <p>
+          He communicates in his own ways - through drawings, gestures,
+          sounds, and sometimes even little melodies. His art is full of
+          monsters, strange creatures, bright colors and entire worlds that
+          seem to exist somewhere between everyday life and his imagination.
+        </p>
+
+        <p className="text-xl font-bold leading-relaxed text-white sm:text-2xl">
+          Olimagine begins with Oliver. But we hope it won&apos;t end with him.
+        </p>
+
+        <p>
+          What starts today as a project built around his art and his future
+          has a much bigger dream: to grow into the{" "}
+          <span className="font-semibold text-[var(--green)]">
+            Olimagine Fund
+          </span>
+          , supporting autistic children around the world and helping make
+          their individual dreams possible.
+        </p>
+
+        <p>
+          Because support shouldn&apos;t only be about therapy, appointments
+          and learning to adapt.{" "}
+          <span className="font-semibold text-[var(--yellow)]">
+            Joy, curiosity, creativity, experiences and having something to
+            dream about matter too.
+          </span>
+        </p>
+
+      </div>
+
+      {/* Everything below this starts after the portrait */}
+      <div className="clear-both" />
+
+    </div>
+
+    {/* Final thought */}
+    <div className="mx-auto mt-14 max-w-5xl border-t border-white/10 pt-10 text-center">
+
+      <p className="text-2xl font-black leading-relaxed text-white sm:text-3xl">
+        Every child has their own universe.
+      </p>
+
+      <p className="mt-2 text-xl font-bold leading-relaxed text-[var(--pink)] sm:text-2xl">
+        Olimagine exists to give those universes more room to grow.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+     
+
+
 
       {/* FEATURED ART */}
       <section
