@@ -37,7 +37,7 @@ export default function GalleryPage() {
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-[var(--text-muted)]">
               A growing collection of Oliver&apos;s original artwork.
               Selected works will become digital collectibles on Solana,
-              connecting his physical art with verifiable on-chain ownership.
+              connecting his digital art with verifiable on-chain ownership.
             </p>
           </div>
 
@@ -138,7 +138,7 @@ export default function GalleryPage() {
               </h3>
 
               <p className="mt-2 max-w-[220px] text-sm leading-relaxed text-[var(--text-muted)]">
-                Original physical art made by Oliver.
+                Original digital art made by Oliver.
               </p>
             </div>
 

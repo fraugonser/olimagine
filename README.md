@@ -2,7 +2,7 @@
 
 ### A little artist. A big imagination. An open universe.
 
-Olimagine is an art-first platform in development that brings physical artwork on-chain through simple, non-custodial digital editions.
+Olimagine is an art-first platform in development that brings digital artwork on-chain through simple, non-custodial digital editions.
 
 It begins with the artwork of Oliver, a seven-year-old non-speaking autistic artist with a huge imagination.
 

@@ -2,7 +2,7 @@
 
 ## 1. Project Overview
 
-Olimagine is an art-first web application that connects physical artwork with verifiable digital ownership on Solana. The project begins with the original artwork of Oliver, a young autistic artist, and is designed as both his personal digital gallery and a technical foundation that can later support contributed original artwork from other artists.
+Olimagine is an art-first web application that connects digital artwork with verifiable digital ownership on Solana. The project begins with the original artwork of Oliver, a young autistic artist, and is designed as both his personal digital gallery and a technical foundation that can later support contributed original artwork from other artists.
 
 The current MVP allows visitors to explore Oliver's artwork, connect their own Solana wallet, and mint selected original works as limited digital collectibles. Eight original artworks are currently integrated into the Devnet prototype, with each artwork configured for a maximum edition size of 100 collectibles and a mint price of 0.02 Devnet SOL.
 
@@ -251,7 +251,7 @@ The metadata contains information describing the collectible and references the 
 
 The relationship can be simplified as:
 
-Physical artwork
+Artwork file
 → Digital artwork file
 → Decentralized storage
 → Metadata URI
@@ -532,7 +532,7 @@ These features are outside the scope of the current prototype and, where relevan
 
 The purpose of the MVP is to validate the core Olimagine concept with a real end-to-end implementation:
 
-Physical artwork
+Digital artwork
 → digital presentation
 → wallet interaction
 → user authorization
